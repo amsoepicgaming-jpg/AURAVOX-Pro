@@ -9,7 +9,7 @@ void section(juce::Graphics& g,juce::Rectangle<float> r,const juce::String& titl
 }
 void AuravoxLookAndFeel::drawRotarySlider(juce::Graphics& g,int x,int y,int w,int h,float pos,float start,float end,juce::Slider& slider){
  auto b=juce::Rectangle<float>(float(x),float(y),float(w),float(h)).reduced(10.0f);float radius=juce::jmin(b.getWidth(),b.getHeight())*0.42f;auto c=b.getCentre();
- float angle=start+pos*(end-start);auto accent=slider.getColour(juce::Slider::rotarySliderFillColourId);
+ float angle=start+pos*(end-start);auto accent=slider.findColour(juce::Slider::rotarySliderFillColourId);
  juce::Path ring;ring.addCentredArc(c.x,c.y,radius,radius,0,start,end,true);g.setColour(juce::Colour(0xff2c3747));g.strokePath(ring,juce::PathStrokeType(6.0f));
  juce::Path arc;arc.addCentredArc(c.x,c.y,radius,radius,0,start,angle,true);g.setColour(accent);g.strokePath(arc,juce::PathStrokeType(5.0f));
  g.setColour(juce::Colour(0xff070b10));g.fillEllipse(c.x-radius+9,c.y-radius+9,2*(radius-9),2*(radius-9));
