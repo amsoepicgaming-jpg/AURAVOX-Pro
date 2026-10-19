@@ -1,0 +1,6 @@
+build/
+dist/
+JUCE/
+*.user
+*.suo
+.DS_Store
